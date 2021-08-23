@@ -21,6 +21,7 @@
 	position: absolute;
 	background-color: rgba(0,0,0,0.4);
 	border-radius: 2px;
+	cursor: pointer;
 }
 
 .technologyTree .body div p {
@@ -56,6 +57,9 @@
 	height: 130px;
 	border-radius: 50%;
 	position: absolute;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto; 
 }
 
 .technologyTree .foot div::before {
