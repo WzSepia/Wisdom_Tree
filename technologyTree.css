@@ -1,8 +1,8 @@
 .technologyTree {
 	width: 967px;
 	height: 928px;
-	background-image: url(tree.png);
-	background-position: -56px 96px;
+	background-image: url(shu.png);
+	background-position: -102px 0px;
 	background-repeat: no-repeat;
 	position: relative;
 	overflow: hidden;
@@ -19,7 +19,7 @@
 	height: 62px;
 	text-align: center;
 	position: absolute;
-	background-color: rgba(0,0,0,0.4);
+	background-color: rgba(0, 0, 0, 0.4);
 	border-radius: 2px;
 	cursor: pointer;
 }
@@ -52,6 +52,95 @@
 	position: relative;
 }
 
+.technologyTree .fliu {
+	position: absolute;
+	left: 391px;
+	top: 600px;
+	content: '';
+	width: 170px;
+	height: 100px;
+}
+
+.technologyTree .fliu>div {
+	position: absolute;
+	border-left: 2px solid transparent;
+	border-right: 2px solid transparent;
+	border-top: 80px solid #0A72CC;
+	border-bottom: 0;
+	filter: blur(0.6px);
+	opacity: 0;
+}
+
+.technologyTree .fliu>div::before {
+	position: absolute;
+	content: '';
+	left: -2px;
+	bottom: 80px;
+	border-left: 2px solid transparent;
+	border-right: 2px solid transparent;
+	border-top: 0;
+	border-bottom: 80px solid #0A72CC;
+}
+
+.technologyTree .fliu>div>div {
+	position: absolute;
+	left: -1px;
+	bottom: 40px;
+	border-left: 1px solid transparent;
+	border-right: 1px solid transparent;
+	border-top: 40px solid #FFFFFF;
+	border-bottom: 0;
+}
+
+.technologyTree .fliu>div>div::before {
+	position: absolute;
+	z-index: 1;
+	content: '';
+	left: -1px;
+	bottom: 40px;
+	border-left: 1px solid transparent;
+	border-right: 1px solid transparent;
+	border-top: 0;
+	border-bottom: 40px solid #FFFFFF;
+}
+
+.technologyTree .fliu>div:nth-child(1) {
+	left: 0px;
+	top: 70px;
+}
+
+.technologyTree .fliu>div:nth-child(2) {
+	left: 37px;
+	top: 70px;
+}
+
+.technologyTree .fliu>div:nth-child(3) {
+	left: 130px;
+	top: 70px;
+}
+
+.technologyTree .fliu>div:nth-child(4) {
+	left: 158px;
+	top: 70px;
+}
+
+@keyframes fliu {
+	0% {
+		transform: translateY(100px);
+		opacity: 0;
+	}
+
+	50% {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+
+	100% {
+		transform: translateY(-100px);
+		opacity: 0.2;
+	}
+}
+
 .technologyTree .foot div {
 	width: 130px;
 	height: 130px;
@@ -59,9 +148,10 @@
 	position: absolute;
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: auto; 
+	background-size: auto;
 }
 
+/* 
 .technologyTree .foot div::before {
 	position: absolute;
 	left: 71px;
@@ -86,7 +176,7 @@
 	filter: blur(6px);
 	border: 1px solid #FFFFFF;
 }
-
+ */
 .technologyTree .foot div p {
 	text-align: center;
 }
@@ -96,6 +186,11 @@
 	margin-top: 35px;
 	padding: 0 10px;
 	box-sizing: border-box;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 
 .technologyTree .foot div p:nth-child(2) {

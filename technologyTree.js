@@ -10,6 +10,20 @@ function technologyTree(data, eleRoot) {
 	let boxHtml = `<div class="technologyTree">
 			<div class="body"></div>
 			<div class="foot"></div>
+			<div class="fliu">
+				<div style='animation: fliu 2s linear ${Math.random()*3}s infinite;'>
+					<div></div>
+				</div>
+				<div style='animation: fliu 2s linear ${Math.random()*3}s infinite;'>
+					<div></div>
+				</div>
+				<div style='animation: fliu 2s linear ${Math.random()*3}s infinite;'>
+					<div></div>
+				</div>
+				<div style='animation: fliu 2s linear ${Math.random()*3}s infinite;'>
+					<div></div>
+				</div>
+			</div>
 		</div>`
 	ele.innerHTML = boxHtml;
 	let leafLength = data.leafs.length;
