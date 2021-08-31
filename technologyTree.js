@@ -6,7 +6,7 @@
 function technologyTree(data, eleRoot) {
 	let ele = document.querySelector(eleRoot);
 	if (!eleRoot || !ele) return false;
-	if (data.leafs.length < 6 || data.roots.length < 3) return false;
+	// if (data.leafs.length < 6 || data.roots.length < 3) return false;
 	let boxHtml = `<div class="technologyTree">
 			<div class="body"></div>
 			<div class="foot"></div>
@@ -31,6 +31,21 @@ function technologyTree(data, eleRoot) {
 	let locationLeaf = null; //叶子位置
 	let locationRoot = null; //跟位置
 	switch (leafLength) {
+		case 1:
+			locationLeaf = technologyTreeLeafs.one;
+			break;
+		case 2:
+			locationLeaf = technologyTreeLeafs.two;
+			break;
+		case 3:
+			locationLeaf = technologyTreeLeafs.three;
+			break;
+		case 4:
+			locationLeaf = technologyTreeLeafs.four;
+			break;
+		case 5:
+			locationLeaf = technologyTreeLeafs.five;
+			break;
 		case 6:
 			locationLeaf = technologyTreeLeafs.six;
 			break;
@@ -56,6 +71,12 @@ function technologyTree(data, eleRoot) {
 			break;
 	}
 	switch (rootLength) {
+		case 1:
+			locationRoot = technologyTreeRoots.one;
+			break;
+		case 2:
+			locationRoot = technologyTreeRoots.two;
+			break;
 		case 3:
 			locationRoot = technologyTreeRoots.three;
 			break;
@@ -75,7 +96,7 @@ function technologyTree(data, eleRoot) {
 	let foot = document.querySelector('.technologyTree .foot');
 	let bodyHtml = '';
 	let footHtml = '';
-	data.leafs.forEach((leaf,index) => {
+	data.leafs.forEach((leaf, index) => {
 		bodyHtml += `
 			<div style='left:${locationLeaf[index].x}px;top:${locationLeaf[index].y}px;${leaf.style};'>
 				<p title='${leaf.title}' style='${leaf.titleStyle}'>${leaf.title}</p>
@@ -84,7 +105,7 @@ function technologyTree(data, eleRoot) {
 		`
 	})
 	body.innerHTML = bodyHtml;
-	data.roots.forEach((root,index) => {
+	data.roots.forEach((root, index) => {
 		footHtml += `
 			<div style='left:${locationRoot[index].x}px;top:${locationRoot[index].y}px;${root.style};'>
 				<p title='${root.title}'>${root.title}</p>
@@ -93,7 +114,7 @@ function technologyTree(data, eleRoot) {
 		`
 	})
 	foot.innerHTML = footHtml;
-	
+
 }
 
 /**
